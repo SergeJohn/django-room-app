@@ -1,0 +1,36 @@
+<!-- <div>
+    
+    <nav>
+        
+        <h1><a href="{% url 'home' %}">StudyBud</a></h1>
+
+       
+        <form method="GET" action="{% url 'home' %}">
+            <input type="text" name="q" placeholder="Search Rooms....">
+        </form>
+
+        {% if request.user.is_authenticated %}
+        <h3>Hello {{request.user}}</h3>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
+    
+</div> -->
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">SeojiStudyRoom</a>
+      <form class="d-flex" role="search" method="GET" action="{% url 'home' %}">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div>
+         {% if request.user.is_authenticated %}
+        <h6>Hello {{request.user}}</h6>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}</div>
+    </div>
+</nav>

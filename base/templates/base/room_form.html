@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div>
+    <form method='POST' action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a href="{{request.META.HTTP_REFERER}}">GO BACK</a>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

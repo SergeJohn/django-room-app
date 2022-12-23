@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        padding: 1rem;
+        gap: 2rem;
+        align-items: flex-start;
+
+    }
+
+    .rooms-container {
+       background-color: #eee; 
+       border-radius: 5px;
+       padding: 5px;    
+    }
+</style>
+
+<div class="home-container">
+
+    {% include 'base/topic_component.html' %}
+    {% include 'base/room_component.html' %}
+    {% include 'base/activity_component.html' %}
+
+</div>  
+{% endblock %} 

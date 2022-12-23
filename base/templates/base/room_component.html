@@ -1,0 +1,15 @@
+<div class="rooms-container">
+    <h1>Rooms</h1><span><a href="{% url 'create-room' %}">Create Room</a></span>
+    <small>There are {{rooms_count}} rooms available!</small><br><br>
+    {% for room in rooms %}
+    {% if request.user == room.host %}
+    <a href="{% url 'update-room' room.id %}">Edit</a>
+    <a href="{% url 'delete-room' room.id %}">Delete</a>
+    {% endif %}
+    <a href="{% url 'user-profile' room.host.id %}"><span><b>@{{room.host}}</b></span></a>
+    <a href="{% url 'room' room.id %}"><li>{{room.id}} --- {{room.name}} </li></a>
+    <small>{{room.topic.name}}</small>  >> 
+    <small>{{room.created|timesince}}</small>
+    <hr>
+    {% endfor %}
+</div>  

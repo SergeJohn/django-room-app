@@ -1,0 +1,42 @@
+
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<style>
+    .profile-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        padding: 1rem;
+        gap: 2rem;
+        align-items: flex-start;
+
+    }
+
+    .rooms-container {
+       background-color: #eee; 
+       border-radius: 5px;
+       padding: 5px;    
+    }
+    .user {
+        text-align: center;
+    }
+</style>
+
+
+<h1 class="user">@{{user.username}}</h1>
+<div class="profile-container">
+    
+    <div >
+        {% include 'base/topic_component.html' %}
+    </div>
+    <div class="rooms-container">
+        {% include 'base/room_component.html' %}
+    </div>
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+</div>
+
+{% endblock %}
